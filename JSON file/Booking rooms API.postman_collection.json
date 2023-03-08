@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "75ab6480-cf82-4c02-b591-a2c41f51eead",
+		"name": "Booking rooms API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25875638"
+	},
+	"item": [
+		{
+			"name": "rooms home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						""
+					]
+				},
+				"description": "Room booking HOME"
+			},
+			"response": []
+		},
+		{
+			"name": "get customers room data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/allCustomers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"allCustomers"
+					]
+				},
+				"description": "All customers data"
+			},
+			"response": []
+		},
+		{
+			"name": "get  room available data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/roomsAvailable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"roomsAvailable"
+					]
+				},
+				"description": "``` json\n{\n        \"roomNumber\": 21,\n        \"seatsAvailable\": 4,\n        \"amenities\": [\"WiFi\", \"TV\", \"air conditioning\"],\n        \"pricePerHour\": 1500\n    }\n\n```\n\nAvailable rooms data sample data"
+			},
+			"response": []
+		},
+		{
+			"name": "book rooms",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"customerName\": \"John Doe\",\r\n      \"date\": \"2020-09-30\",\r\n      \"startTime\": \"10:00\",\r\n      \"endTime\": \"12:00\",\r\n      \"roomID\": \"RM001\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1234/roomBooking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"roomBooking"
+					]
+				},
+				"description": "Booking rooms sample data\n\n``` json\n{\n      \"customerName\": \"John Doe\",\n      \"date\": \"2020-09-30\",\n      \"startTime\": \"10:00\",\n      \"endTime\": \"12:00\",\n      \"roomID\": \"RM001\"\n  }\n```"
+			},
+			"response": []
+		}
+	]
+}
